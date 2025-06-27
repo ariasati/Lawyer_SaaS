@@ -37,9 +37,11 @@ export default function HomePage() {
                 Start Free Trial
               </Button>
             </Link>
-            <Button variant="slim" className="px-8 py-3 text-lg">
-              Watch Demo
-            </Button>
+            <Link href="mailto:support@legaltimepro.com?subject=Demo Request">
+              <Button variant="slim" className="px-8 py-3 text-lg">
+                Request Demo
+              </Button>
+            </Link>
           </div>
           <p className="text-sm text-gray-500 mt-4">14-day free trial • No credit card required</p>
         </div>
@@ -105,7 +107,9 @@ export default function HomePage() {
                 <li>✓ Professional Invoices</li>
                 <li>✓ Basic Reporting</li>
               </ul>
-              <Button className="w-full">Start Free Trial</Button>
+              <Link href="/signin">
+                <Button className="w-full">Start Free Trial</Button>
+              </Link>
             </div>
             
             <div className="bg-white rounded-lg shadow-lg p-8 text-center border-2 border-indigo-600">
@@ -117,7 +121,9 @@ export default function HomePage() {
                 <li>✓ Advanced Reporting</li>
                 <li>✓ Client Portal</li>
               </ul>
-              <Button className="w-full bg-indigo-600 hover:bg-indigo-700">Start Free Trial</Button>
+              <Link href="/signin">
+                <Button className="w-full bg-indigo-600 hover:bg-indigo-700">Start Free Trial</Button>
+              </Link>
             </div>
             
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -129,7 +135,9 @@ export default function HomePage() {
                 <li>✓ API Access</li>
                 <li>✓ Priority Support</li>
               </ul>
-              <Button className="w-full">Start Free Trial</Button>
+              <Link href="/signin">
+                <Button className="w-full">Start Free Trial</Button>
+              </Link>
             </div>
           </div>
         </div>
