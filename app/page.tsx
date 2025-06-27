@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
+import Button from '@/components/ui/Button';
 
 export default function HomePage() {
   return (
@@ -37,7 +37,7 @@ export default function HomePage() {
                 Start Free Trial
               </Button>
             </Link>
-            <Button variant="outline" className="px-8 py-3 text-lg">
+            <Button variant="slim" className="px-8 py-3 text-lg">
               Watch Demo
             </Button>
           </div>
