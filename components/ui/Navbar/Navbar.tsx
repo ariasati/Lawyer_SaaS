@@ -1,13 +1,21 @@
-import { createClient } from '@/utils/supabase/server';
 import s from './Navbar.module.css';
 import Navlinks from './Navlinks';
 
 export default async function Navbar() {
-  const supabase = createClient();
-
-  const {
-    data: { user }
-  } = await supabase.auth.getUser();
+  let user = null;
+  
+  // Only try to get user if Supabase is configured
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    try {
+      const { createClient } = await import('@/utils/supabase/server');
+      const supabase = createClient();
+      const { data } = await supabase.auth.getUser();
+      user = data?.user || null;
+    } catch (error) {
+      console.log('Supabase not configured, continuing without user auth');
+      user = null;
+    }
+  }
 
   return (
     <nav className={s.root}>
