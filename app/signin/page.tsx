@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import Button from '@/components/ui/Button';
-
 export default function SignIn() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
@@ -37,17 +34,19 @@ export default function SignIn() {
           </div>
           
           <div className="mt-8 space-y-4">
-            <Link href="/">
-              <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white">
-                Back to Homepage
-              </Button>
-            </Link>
+            <a 
+              href="/"
+              className="block w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+            >
+              Back to Homepage
+            </a>
             
-            <Link href="mailto:support@legaltimepro.com?subject=Early Access Request">
-              <Button variant="slim" className="w-full">
-                Request Early Access
-              </Button>
-            </Link>
+            <a 
+              href="mailto:support@legaltimepro.com?subject=Early Access Request"
+              className="block w-full border border-gray-300 hover:border-gray-400 text-gray-700 font-medium py-3 px-4 rounded-lg transition-colors"
+            >
+              Request Early Access
+            </a>
           </div>
         </div>
       </div>
