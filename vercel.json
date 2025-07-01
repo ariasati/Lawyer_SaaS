@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "public/index.html": {
+      "memory": 128
+    }
+  },
   "routes": [
     {
       "src": "/",
@@ -9,8 +14,21 @@
       "dest": "/index.html"
     },
     {
+      "src": "/contact",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/pricing",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/features",
+      "dest": "/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "trailingSlash": false
 } 
