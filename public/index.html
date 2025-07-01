@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalTime Pro - Professional Time Tracking & Billing for Law Firms</title>
+    <meta name="description" content="Professional time tracking and billing software for law firms. Streamline your practice with automated invoicing and matter management.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #4338ca;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #4f46e5;
+        }
+        
+        .services {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing {
+            padding: 4rem 0;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border-color: #4f46e5;
+            transform: scale(1.05);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4f46e5;
+            margin: 1rem 0;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        
+        .contact {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .policies {
+            padding: 4rem 0;
+        }
+        
+        .policies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+        
+        .policy-section h3 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-section p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #f9fafb;
+        }
+        
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">LegalTime Pro</div>
+            <ul class="nav-links">
+                <li><a href="#services">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#signin">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Time Tracking & Billing for Law Firms</h1>
+            <p>Streamline your practice with automated time tracking, matter management, and professional invoice generation. Built specifically for solo practitioners and small law firms.</p>
+            <a href="#signin" class="btn">Start Free Trial</a>
+            <a href="mailto:support@legaltimepro.com?subject=Demo Request" class="btn btn-outline">Request Demo</a>
+            <p style="margin-top: 1rem; opacity: 0.8;">14-day free trial • No credit card required</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">⏱️</div>
+                    <h3>Time Tracking</h3>
+                    <p>Accurate time tracking with one-click timers for all your matters and clients</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Invoice Generation</h3>
+                    <p>Professional PDF invoices automatically generated from your time entries</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Matter Management</h3>
+                    <p>Organize cases, track deadlines, and manage client information in one place</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Solo</h3>
+                    <div class="price">$39<span style="font-size: 1rem; color: #666;">/month</span></div>
+                    <ul class="features">
+                        <li>✓ 1 User</li>
+                        <li>✓ Unlimited Time Tracking</li>
+                        <li>✓ Professional Invoices</li>
+                        <li>✓ Basic Reporting</li>
+                    </ul>
+                    <a href="#signin" class="btn">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Small Firm</h3>
+                    <div class="price">$79<span style="font-size: 1rem; color: #666;">/month</span></div>
+                    <ul class="features">
+                        <li>✓ Up to 5 Users</li>
+                        <li>✓ Everything in Solo</li>
+                        <li>✓ Advanced Reporting</li>
+                        <li>✓ Client Portal</li>
+                    </ul>
+                    <a href="#signin" class="btn">Start Free Trial</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Growth</h3>
+                    <div class="price">$149<span style="font-size: 1rem; color: #666;">/month</span></div>
+                    <ul class="features">
+                        <li>✓ Up to 15 Users</li>
+                        <li>✓ Everything in Small Firm</li>
+                        <li>✓ API Access</li>
+                        <li>✓ Priority Support</li>
+                    </ul>
+                    <a href="#signin" class="btn">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Customer Support</h3>
+                    <p><strong>Email:</strong> support@legaltimepro.com</p>
+                    <p><strong>Phone:</strong> 1-800-LEGAL-TIME</p>
+                    <p><strong>Address:</strong><br>123 Legal Street, Suite 456<br>San Francisco, CA 94102</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Business Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM PST</p>
+                    <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM PST</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="policies">
+        <div class="container">
+            <h2>Policies & Terms</h2>
+            <div class="policy-grid">
+                <div class="policy-section">
+                    <h3>Refund Policy</h3>
+                    <p>We offer a 30-day money-back guarantee. If you're not satisfied with our service, contact us within 30 days of your subscription start date for a full refund.</p>
+                    
+                    <h3>Cancellation Policy</h3>
+                    <p>You can cancel your subscription at any time from your account dashboard. Cancellations take effect at the end of your current billing period.</p>
+                    
+                    <h3>Dispute Resolution</h3>
+                    <p>For billing disputes, please contact our support team at support@legaltimepro.com. We will work to resolve any issues within 5 business days.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h3>Terms of Service</h3>
+                    <p>By using LegalTime Pro, you agree to our terms of service. Our service is provided "as is" and we make no warranties regarding uptime or data integrity, though we strive for 99.9% uptime.</p>
+                    
+                    <h3>Privacy Policy</h3>
+                    <p>We take your privacy seriously. We do not sell or share your data with third parties. All data is encrypted and stored securely in compliance with legal industry standards.</p>
+                    
+                    <h3>Data Security</h3>
+                    <p>All client data is encrypted at rest and in transit. We maintain SOC 2 compliance and regular security audits to protect your sensitive legal information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signin" style="padding: 4rem 0; background: #f8fafc; text-align: center;">
+        <div class="container">
+            <h2>Sign In to LegalTime Pro</h2>
+            <p style="margin-bottom: 2rem; color: #666;">Authentication system coming soon! We're setting up secure login for your law firm.</p>
+            
+            <div style="max-width: 600px; margin: 0 auto; display: grid; gap: 1rem;">
+                <div style="background: #dbeafe; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">🚀 Get Early Access</h3>
+                    <p style="color: #1e40af;">Contact us at <strong>support@legaltimepro.com</strong> to get early access to the beta version.</p>
+                </div>
+                
+                <div style="background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #14532d; margin-bottom: 0.5rem;">📞 Schedule a Demo</h3>
+                    <p style="color: #166534;">Call <strong>1-800-LEGAL-TIME</strong> to schedule a personalized demo.</p>
+                </div>
+                
+                <div style="background: #f3e8ff; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: #581c87; margin-bottom: 0.5rem;">🎯 Beta Launch Special</h3>
+                    <p style="color: #7c3aed;"><strong>50% off</strong> for the first 100 law firms that sign up!</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <a href="mailto:support@legaltimepro.com?subject=Early Access Request" class="btn">Request Early Access</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>LegalTime Pro</h4>
+                    <p>Professional time tracking and billing software for law firms.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#services">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#signin">Sign In</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#contact">Contact</a>
+                    <a href="mailto:support@legaltimepro.com">Help Center</a>
+                    <a href="tel:1-800-LEGAL-TIME">Phone Support</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#policies">Terms of Service</a>
+                    <a href="#policies">Privacy Policy</a>
+                    <a href="#policies">Refund Policy</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2024 LegalTime Pro. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;">Business License: CA-2024-LEGAL-001 | Tax ID: 12-3456789</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
